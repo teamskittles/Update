@@ -33,10 +33,10 @@ licenses:
 - 'google-gdk-license-.+'
 
 before_install:
-  - yes | sdkmanager "platforms;android-27"
+- chmod +x ./gradlew
+- yes | sdkmanager "platforms;android-27"
   
 script:
-- chmod +x ./gradlew
 - echo yes | sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout;1.0.2"
 - echo yes | sdkmanager "extras;m2repository;com;android;support;constraint;constraint-layout-solver;1.0.2"
 - echo no | android create avd --force -n test -t $ANDROID_TARGET --abi $ANDROID_ABI
